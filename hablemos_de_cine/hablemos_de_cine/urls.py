@@ -30,5 +30,5 @@ from Pagina_principal.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", bienvenidos),
-    path('Pagina_principal/', include('Pagina_principal.urls')),
+    path('Pagina-principal/', include('Pagina_principal.urls')),
 ]

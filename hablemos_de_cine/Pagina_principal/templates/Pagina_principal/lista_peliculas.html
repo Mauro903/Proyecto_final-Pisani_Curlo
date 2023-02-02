@@ -1,0 +1,86 @@
+{% extends 'Pagina_principal/base.html' %}
+
+
+{% block estilos %}
+h1.titulos-peliculas{
+  color: red;
+}
+table{
+  width: 50%;
+  background-color: lightblue;
+  text-align: center;
+  vertical-align: top;
+  border-spacing: 10px;
+  background: #6c757d;
+  color: #fff;
+}
+
+table, th, td {
+  border: 0.5px solid white;
+  border-collapse: separate;
+}
+
+th, td{
+  margin:10 px;
+  padding: 0.em;
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  
+}
+
+caption {
+  padding: 0.3em;
+}
+{% endblock estilos %}
+
+{% block contenido %}
+<div>
+
+<!--{% include 'Pagina-principal/barra_saludo.html' %}-->
+
+<h1 class= "titulos-peliculas">Peliculas</h1><!--cree una clase para poder darle un estilo al titulo-->
+<a href= "{%url 'crear_pelicula' %}">añadir pelicula</a>
+<br><br>
+<ul>
+  
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Duracion</th>
+    <th>Director</th>
+    <th>Fecha de estreno</th>
+    <th>Clasificación</th>
+    <td colspan="3">Acciones</td>
+
+  </tr> 
+  {% for pelicula in object_list %}
+  <tr>
+    <td>{{ pelicula.titulo}}</td>
+    <td>{{ pelicula.duracion}}</td>
+    <td>{{ pelicula.director}}</td>
+    <td>{{ pelicula.fecha_estreno}}</td>
+    <td>{{ pelicula.clasificación}}</td>
+    <td>
+      <a href="{% url "ver_peliculas" peliculas.id %}" class="btn btn-success">       ver    </a>
+
+    </td>
+    <td>
+      <a href="{% url "editar_peliculas" peliculas.id %}" class="btn btn-primary">        Editar     </a>
+
+    </td>
+ </form>  
+  <td>
+    <a href="{% url "eliminar_peliculas" peliculas.id %}" class="btn btn-danger">        Eliminar     </a>
+
+    </td>
+  </form>
+  </tr>
+  {% endfor %}
+</table>
+
+</ul>
+</div>
+{% endblock contenido %}
