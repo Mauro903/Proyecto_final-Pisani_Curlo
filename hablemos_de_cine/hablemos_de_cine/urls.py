@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Pagina_principal.views import bienvenidos
+from login.urls import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", bienvenidos),
     path('Pagina-principal/', include('Pagina_principal.urls')),
+
 ]

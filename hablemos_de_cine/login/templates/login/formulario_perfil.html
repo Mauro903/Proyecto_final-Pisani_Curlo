@@ -1,0 +1,21 @@
+{% extends 'Pagina_principal/Base.html' %}
+
+{% block estilos %}
+h1.titulos{
+  color: grey;
+}
+{% endblock estilos %}
+
+{% block contenido %}
+
+<h1 class= "titulos">Editar usuario</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar" />
+</form>
+
+<br>
+<a href="{% url 'listar_usuarios' %}">Volver lista</a>
+
+{% endblock contenido %}
