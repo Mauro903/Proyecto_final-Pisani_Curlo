@@ -17,6 +17,11 @@ def bienvenidos(request):
         request=request,
         template_name="Pagina_principal/inicio.html",
     )
+def blog(request):
+        return render(
+        request=request,
+        template_name="Pagina_principal/Blog.html",
+    )
 
 class PeliculasListView(LoginRequiredMixin, ListView):
     model = Peliculas
