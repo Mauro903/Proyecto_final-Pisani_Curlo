@@ -9,10 +9,16 @@ from .models import Post, Categoria, Web, Suscriptor
 import random
 from .utils import *
 from .form import ContactoForm
-#from django.core.mail import send_mail
+from django.core.mail import send_mail
 from hablemos_de_cine.settings import EMAIL_HOST_USER
 
 # Create your views here.
+
+
+def inicio(request):
+        return render(
+        request=request,
+        template_name="Pagina_principal/inicio.html",)
 
 
 class Blog(ListView):
@@ -128,19 +134,15 @@ class FormularioContacto(View):
             }
             return render(request,'contacto.html',contexto,)    
         
-#class Suscribir(View):
-    #def post(self,request,*args,**kwargs):
-        #correo = request.POST.get('correo')
-       # Suscriptor.objects.create(correo = correo)
-       # asunto = 'GRACIAS POR SUSCRIBIRTE A Hablemos de CINE!'
-      #  mensaje = 'Te haz suscrito exitosamente a Hablemos de CINE, Gracias por elegirnos!!!'
-      #  try:
-      #      send_mail(asunto,mensaje,EMAIL_HOST_USER,[correo])
-      #  except:
-      #      pass
+class Suscribir(View):
+    def post(self,request,*args,**kwargs):
+        correo = request.POST.get('correo')
+        Suscriptor.objects.create(correo = correo)
+        asunto = 'GRACIAS POR SUSCRIBIRTE A Hablemos de CINE!'
+        mensaje = 'Te haz suscrito exitosamente a Hablemos de CINE, Gracias por elegirnos!!!'
+        try:
+            send_mail(asunto,mensaje,EMAIL_HOST_USER,[correo])
+        except:
+            pass
 
-     #   return redirect('Pagina_principal:Blog')
-
-#class PeliculasListView(LoginRequiredMixin, ListView):
-#    model = Peliculas
-#    template_name = "Pagina_principal/lista_peliculas.html"
+        return redirect('inicio')

@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_HOST_USER = 'hablemosdecin3@hotmail.com'
 EMAIL_HOST_PASSWORD = 'mpc19891203'
 EMAIL_PORT = 587
