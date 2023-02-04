@@ -10,12 +10,18 @@
                 <article>
                     <!-- Post content-->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">Hablemos de cine Blog fue creado para compartir opiniones y criticas a peliculas y series</p>
-                        <p class="fs-5 mb-4">dentro de este blog podras compartir tu opinon y la unica regla es el respto hacia el otro</p>
-                        <p class="fs-5 mb-4">daremos nuestra opinion acerca de los estrenos mas impactantes de los ultimos tiempos</p>
-                        <h2 class="fw-bolder mb-4 mt-5">bienvenidos a todos los cinefilos que quieran unirse a esta enorme comunidad</h2>
-                        <p class="fs-5 mb-4">para nosotros es un placer tenerlos en nuestro blog como usuarios y poder leer todos sus comentarios</p>
-                        <p class="fs-5 mb-4">vamos a compartir con ustedes entrevistas y muchas cosas mas</p>
+                        <div class="slide-one-item home-slider owl-carousel">
+                            <div class="site-cover site-cover-sm same-height overlay" style="background-image: url({{ principal.imagen_referencial.url }});">
+                              <div class="container">
+                                <div class="row same-height align-items-center">
+                                  <div class="col-md-12 col-lg-6">
+                                    <div class="post-entry">
+                                      <span class="post-category text-white bg-success mb-3">{{ principal.categoria | upper }}</span>
+                                      <h2 class="mb-4"><a href="{% url 'base:detalle_post' principal.slug %}">{{ principal.titulo }}</a></h2>
+                                      <div class="post-meta align-items-center text-left">
+                                        <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ principal.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                                        <span class="d-inline-block mt-1">Autor: {{ principal.autor }}</span>
+                                        <span>{{ principal.fecha_publicacion }}</span>
                     </section>
                 </article>
                 <!-- Comments section-->
@@ -23,7 +29,8 @@
                     <div class="card bg-light">
                         <div class="card-body">
                             <!-- Comment form-->
-                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Escribe tu comentario!!"></textarea></form>
+                            <button class="btn btn-primary" id="button-search" type="button">Comentar</button>
                             <!-- Comment with nested comments-->
                             <div class="d-flex mb-4">
                                 <!-- Parent comment-->
@@ -80,14 +87,14 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Series</a></li>
+                                    <li><a href="{% url 'pagina_principal:series' %}">Series</a></li>
                                     <li><a href="#!"></a></li>
                                     <li><a href="#!">Teatro</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Peliculas</a></li>
+                                    <li><a href="{% url 'pagina_principal:peliculas' %}">Peliculas</a></li>
                                     <li><a href="#!"></a></li>
                                     <li><a href="#!">Entrevistas</a></li>
                                 </ul>
