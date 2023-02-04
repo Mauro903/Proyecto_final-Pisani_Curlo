@@ -1,9 +1,9 @@
 {% extends 'Base.html' %}
-{% load staticfiles %}
-{% block titulo %} CONTACTO | Hablemos de CINE {% endblock titulo %}
+{% load static %}
+{% block subtitulo %} CONTACTO | Hablemos de CINE {% endblock subtitulo %}
 
-{% block cuerpo %}
-    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{% static 'images/hero_1.jpg' %}');">
+{% block contenido %}
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{% static 'https://cdn-icons-png.flaticon.com/512/3507/3507102.png' %}');">
       <div class="container">
         <div class="row same-height justify-content-center">
           <div class="col-md-12 col-lg-10">
@@ -88,18 +88,4 @@
         </div>
       </div>
     </div>
-{% endblock cuerpo %}
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+{% endblock contenido %}

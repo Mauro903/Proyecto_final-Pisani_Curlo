@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog Post - Start Bootstrap Template</title>
+        <title> Hablemos de CINE  {% block subtitulo %}{% endblock subtitulo %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3507/3507102.png" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -27,7 +27,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'bienvenidos' %}">Pagina principal</a>
+                <a class="navbar-brand" href= "{% url 'blog' %}" >PAGINA PRINCIPAL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -35,19 +35,21 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link " href="{% url 'logout' %}">CERRAR SESION</a></li>
                         {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'login' %}">Iniciar sesion</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
                         
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
-        <section style="padding:80px 50px;">
+        <section>
             {% block contenido %}
-            {% endblock contenido %}
+            {% endblock contenido %}            
+       </section>
+        <section style="padding:80px 50px;">
+
         </section>
 
         <!-- Footer-->

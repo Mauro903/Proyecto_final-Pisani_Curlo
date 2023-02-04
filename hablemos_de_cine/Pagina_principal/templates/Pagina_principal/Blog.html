@@ -1,113 +1,184 @@
 {% extends 'Pagina_principal/Base.html' %}
+{% load static%}
+
 
 {% block contenido %}
-{% include 'Pagina_principal/barra_saludo.html' %}
-       <!-- Page content-->
-       <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-8">
+<head>
+    <title>{% block titulo %}{% endblock titulo %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/style.css' %}">
+</head>
+       <!-- Page content
+ <div class="container mt-5">
+     <div class="row">
+        <div class="col-lg-8">
+            <!-- Post content-->
+
+            <div class="site-wrap">
+
+                <div class="site-mobile-menu">
+                  <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close mt-3">
+                      <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                  </div>
+                  <div class="site-mobile-menu-body"></div>
+                </div>
+             
+                <header class="site-navbar pt-3" role="banner">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+        <header class="site-navbar pt-3" role="banner">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+         
+                  <div class="col-6 col-xl-6 logo">
+                    <h1 class="mb-0"><a href="blog" class="text-black h2 mb-0"></a></h1>
+                  </div>         
                 <!-- Post content-->
-                <article>
-                    <!-- Post content-->
-                    <section class="mb-5">
-                        <div class="slide-one-item home-slider owl-carousel">
-                            <div class="site-cover site-cover-sm same-height overlay" style="background-image: url({{ principal.imagen_referencial.url }});">
-                              <div class="container">
-                                <div class="row same-height align-items-center">
-                                  <div class="col-md-12 col-lg-6">
-                                    <div class="post-entry">
-                                      <span class="post-category text-white bg-success mb-3">{{ principal.categoria | upper }}</span>
-                                      <h2 class="mb-4"><a href="{% url 'base:detalle_post' principal.slug %}">{{ principal.titulo }}</a></h2>
-                                      <div class="post-meta align-items-center text-left">
-                                        <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ principal.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
-                                        <span class="d-inline-block mt-1">Autor: {{ principal.autor }}</span>
-                                        <span>{{ principal.fecha_publicacion }}</span>
-                    </section>
-                </article>
-                <!-- Comments section-->
-                <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <!-- Comment form-->
-                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Escribe tu comentario!!"></textarea></form>
-                            <button class="btn btn-primary" id="button-search" type="button">Comentar</button>
-                            <!-- Comment with nested comments-->
-                            <div class="d-flex mb-4">
-                                <!-- Parent comment-->
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                    <!-- Child comment 1-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                        </div>
-                                    </div>
-                                    <!-- Child comment 2-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            When you put money directly to a problem, it makes a good headline.
-                                        </div>
-                                    </div>
-                                </div>
+
+
+                <div class="col-12 d-none d-xl-block border-top">
+                    <nav class="site-navigation text-center " role="navigation">
+         
+                      <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block mb-0">
+                        <li><a href="">Inicio</a></li>
+                        <li><a href="">Series</a></li>
+                        <li><a href="">Peliculas</a></li>
+                        <li><a href="">Contacto</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </header>
+                <div class="slide-one-item home-slider owl-carousel">
+                    <div class="site-cover site-cover-sm same-height overlay" style="background-image: url({{ principal.imagen_referencial.url }});">
+                      <div class="container">
+                        <div class="row same-height align-items-center">
+                          <div class="col-md-12 col-lg-6">
+                            <div class="post-entry">
+                              <span class="post-category text-white bg-success mb-3">{{ principal.categoria | upper }}</span>
+                              <h2 class="mb-4"><a href="{% url 'detalle_post' principal.slug %}">{{ principal.titulo }}</a></h2>
+                              <div class="post-meta align-items-center text-left">
+                                <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ principal.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                                <span class="d-inline-block mt-1">Autor: {{ principal.autor }}</span>
+                                <span>{{ principal.fecha_publicacion }}</span>
+                              </div>
                             </div>
-                            <!-- Single comment-->
-                            <div class="d-flex">
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                                </div>
-                            </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </section>
-            </div>
-            <!-- Side widgets-->
-            <div class="col-lg-4">
-                <!-- Search widget-->
-                <div class="card mb-4">
-                    <div class="card-header">Busqueda</div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Ingrese su busqueda" aria-label="Ingrese su busqueda" aria-describedby="button-search" />
-                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Categories widget-->
-                <div class="card mb-4">
-                    <div class="card-header">Categorias</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="{% url 'pagina_principal:series' %}">Series</a></li>
-                                    <li><a href="#!"></a></li>
-                                    <li><a href="#!">Teatro</a></li>
-                                </ul>
+                  </div>
+                  <div class="site-section">
+                    <div class="container">
+                      <div class="row align-items-stretch retro-layout">
+                        <div class="col-md-5">
+                          <a href="{% url 'detalle_post' post1.slug %}" class="hentry img-1 h-100 gradient" style="background-image: url({{ post1.imagen_referencial.url }});">
+                            <span class="post-category text-white bg-danger">{{ post1.categoria |upper }}</span>
+                            <div class="text">
+                              <h2>{{ post1.titulo }}</h2>
+                              <span>{{ post1.fecha_publicacion }}</span>
                             </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="{% url 'pagina_principal:peliculas' %}">Peliculas</a></li>
-                                    <li><a href="#!"></a></li>
-                                    <li><a href="#!">Entrevistas</a></li>
-                                </ul>
-                            </div>
+                          </a>
                         </div>
+                        <div class="col-md-7">
+                          <a href="{% url 'detalle_post' post2.slug %}" class="hentry img-2 v-height mb30 gradient" style="background-image: url({{ post2.imagen_referencial.url }});">
+                            <span class="post-category text-white bg-success">{{ post2.categoria |upper }}</span>
+                            <div class="text text-sm">
+                              <h2>{{ post2.titulo }}</h2>
+                              <span>{{ post2.fecha_publicacion }}</span>
+                            </div>
+                          </a>
+               
+                          <div class="two-col d-block d-md-flex">
+                            <a href="{% url 'detalle_post' post3.slug %}" class="hentry v-height img-2 gradient" style="background-image: url({{ post3.imagen_referencial.url }});">
+                              <span class="post-category text-white bg-primary">{{ post3.categoria |upper }}</span>
+                              <div class="text text-sm">
+                                <h2>{{ post3.titulo }}</h2>
+                                <span>{{ post3.fecha_publicacion }}</span>
+                              </div>
+                            </a>
+                            <a href="{% url 'detalle_post' post4.slug %}" class="hentry v-height img-2 ml-auto gradient" style="background-image: url({{ post4.imagen_referencial.url }});">
+                              <span class="post-category text-white bg-warning">{{ post4.categoria |upper }}</span>
+                              <div class="text text-sm">
+                                <h2>{{ post4.titulo }}</h2>
+                                <span>{{ post4.fecha_publicacion }}</span>
+                              </div>
+                            </a>
+                          </div>
+               
+                        </div>
+                      </div>
+               
                     </div>
-                </div>
-                <!-- Side widget-->
-                <div class="card mb-4">
-                    <div class="card-header">Side Widget</div>
-                    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-                </div>
-            </div>
-        </div>
-    </div>
+                  </div>
+               
+                  <div class="site-section">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-6 mb-6 mb-lg-6">
+                          <div class="section-heading mb-5 d-flex align-items-center">
+                            <h2>{{ post1.categoria | upper }}</h2>
+                            <div class="ml-auto"><a href="{% url 'listado_series' %}" class="view-all-btn">VER TODOS</a></div>
+                          </div>
+                          <div class="entry2 mb-5">
+                            <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
+                            <span class="post-category text-white bg-primary mb-3"></span>
+                            <h2><a href="{% url 'detalle_post' post1.slug %}"></a>{{ post1.titulo }}</h2>
+                            <div class="post-meta align-items-center text-left clearfix">
+                              <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post1.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                              <span class="d-inline-block mt-1">POR <a href="#">{{ post1.autor }}</a></span>
+                              <span>{{ post1.fecha_publicacion }}</span>
+                            </div>
+                            <p>{{ post1.descripcion }}</p>
+                          </div>
+                       </div>
+                       <div class="col-lg-6 mb-6 mb-lg-6">
+                         <div class="section-heading mb-5 d-flex align-items-center">
+                           <h2>{{ post1.categoria | upper }}</h2>
+                           <div class="ml-auto"><a href="{% url 'listado_peliculas' %}" class="view-all-btn">VER TODOS</a></div>
+                         </div>
+                         <div class="entry2 mb-5">
+                           <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
+                           <span class="post-category text-white bg-primary mb-3"></span>
+                           <h2><a href="{% url 'detalle_post' post1.slug %}"></a>{{ post1.titulo }}</h2>
+                           <div class="post-meta align-items-center text-left clearfix">
+                             <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post1.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                             <span class="d-inline-block mt-1">POR <a href="#">{{ post1.autor }}</a></span>
+                             <span>{{ post1.fecha_publicacion }}</span>
+                           </div>
+                           <p>{{ post1.descripcion }}</p>
+                         </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script src="{% static 'hablemos_de_cine/js/jquery-3.3.1.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/jquery-migrate-3.0.1.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/jquery-ui.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/popper.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/bootstrap.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/owl.carousel.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/jquery.stellar.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/jquery.countdown.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/jquery.magnific-popup.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/bootstrap-datepicker.min.js' %}"></script>
+                  <script src="{% static 'hablemos_de_cine/js/aos.js' %}"></script>
+                 
+                  <script src="{% static 'hablemos_de_cine/js/main.js' %}"></script>
+
+                
 {% endblock contenido %}

@@ -15,17 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from Pagina_principal.views import bienvenidos
-from login.urls import *
 from django.conf import settings
 from django.views.static import serve
 from Pagina_principal.views import *
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", bienvenidos),
-    path('Pagina-principal/', include('Pagina_principal.urls')),
+    path('', include('Pagina_principal.urls')),
     
 ]
 

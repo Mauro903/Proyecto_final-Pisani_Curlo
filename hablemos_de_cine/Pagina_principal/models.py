@@ -11,21 +11,7 @@ class ModeloBase(models.Model):
 
     class Meta:
         abstract = True
-
-#class Peliculas(ModeloBase):
-#    titulo = models.CharField(max_length=30)
-#    duracion = models.CharField(max_length=10)
-#    director = models.CharField(max_length=30)
-#    fecha_estreno = models.DateField(null=True)
-#    clasificación = models.CharField(max_length=50)
-#    imagen_referencial = models.ImageField("Imagen Referencial", upload_to= "categoria/")
-
-#    class Meta:
-#        verbose_name ="Categoria"
-#        verbose_name_plural = "Categorias"
-#    def __str__(self):
-#        return self.nombre
-    
+ 
 class Autor(ModeloBase):
     nombre = models.CharField("Nombres", max_length=100)
     apellidos = models.CharField("apellidos", max_length=120)
@@ -49,6 +35,9 @@ class Categoria(ModeloBase):
     class Meta:
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
+
+    def __str__(self):
+        return self.nombre
 
 class Post(ModeloBase):
     titulo = models.CharField("Titulo del Post", max_length=150, unique = True)
@@ -114,13 +103,5 @@ class Suscriptor(ModeloBase):
     def __str__(self):
         return self.correo
 
-
-#class Series(ModeloBase):
-#    titulo = models.CharField(max_length=30)
-#    duracion = models.CharField(max_length=10)
-#    director = models.CharField(max_length=30)
-#   fecha_estreno = models.DateField(null=True)
-#    clasificación = models.CharField(max_length=50)
-#    imagen_referencial = models.ImageField("Imagen Referencial", upload_to= "categoria/")
 
 # Create your models here.
