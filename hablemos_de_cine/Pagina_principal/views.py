@@ -14,13 +14,6 @@ from hablemos_de_cine.settings import EMAIL_HOST_USER
 
 # Create your views here.
 
-def bienvenidos(request):
-        return render(
-        request=request,
-        template_name="Pagina_principal/Blog.html",
-    )
-
-
 
 class Blog(ListView):
         
@@ -128,7 +121,7 @@ class FormularioContacto(View):
         form = ContactoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('inicio')
+            return redirect('blog')
         else:
             contexto = {
                 'form':form,

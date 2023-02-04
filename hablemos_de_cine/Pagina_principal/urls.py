@@ -8,8 +8,6 @@ from .views import *
 
 
 urlpatterns = [
-    path("", bienvenidos, name='bienvenidos' ),
-    path('bienvenidos/', bienvenidos, name='bienvenidos'),
     path('', Blog.as_view(), name='blog'),
     path('registro/', registro, name='registro'),
     path('login/', login_view, name='login'),

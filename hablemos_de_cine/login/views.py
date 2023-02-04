@@ -12,13 +12,16 @@ from login.forms import *
 # Create your views here.
 
 
+
+
+
 def registro(request):
     if request.method == "POST":
         formulario = UserRegisterForm(request.POST)
 
         if formulario.is_valid():
             formulario.save()  # Esto lo puedo usar porque es un model form
-            url_exitosa = reverse('bienvenidos')
+            url_exitosa = reverse('blog')
             return redirect(url_exitosa)
     else:  # GET
         formulario = UserRegisterForm()
@@ -44,7 +47,7 @@ def login_view(request):
                 login(request=request, user=user)
                 if next_url:
                     return redirect(next_url)
-                url_exitosa = reverse('bienvenidos')
+                url_exitosa = reverse('blog')
                 return redirect(url_exitosa)
     else:  # GET
         form = AuthenticationForm()

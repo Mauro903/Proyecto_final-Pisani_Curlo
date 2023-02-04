@@ -1,8 +1,20 @@
-{% extends 'Base.html' %}
 {% load static %}
 {% block subtitulo %} CONTACTO | Hablemos de CINE {% endblock subtitulo %}
 
 {% block contenido %}
+
+<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+<link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{% static 'https://cdn-icons-png.flaticon.com/512/3507/3507102.png' %}');">
       <div class="container">
         <div class="row same-height justify-content-center">
@@ -81,11 +93,14 @@
             <div class="p-4 mb-3 bg-white">
               <h3 class="h5 text-black mb-3">Nosotros</h3>
               <p>{{ web.nosotros }}</p>
-              <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Learn More</a></p>
+              <p><a href="https://www.linkedin.com/in/mauro-pisani-curlo/" class="btn btn-primary px-4 py-2 text-white">Learn More</a></p>
+
+              <a href="{% url 'blog' %}">Volver al BLOG</a>
             </div>
 
           </div>
         </div>
       </div>
     </div>
+
 {% endblock contenido %}

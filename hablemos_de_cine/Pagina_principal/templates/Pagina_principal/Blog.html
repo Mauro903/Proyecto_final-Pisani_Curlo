@@ -57,8 +57,8 @@
                       <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block mb-0">
                         <li><a href="">Inicio</a></li>
                         <li><a href="">Series</a></li>
-                        <li><a href="">Peliculas</a></li>
-                        <li><a href="">Contacto</a></li>
+                        <li><a href="{% url 'peliculas' %}">Peliculas</a></li>
+                        <li><a href="{% url 'formulario_contacto' %}">Contacto</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -132,7 +132,7 @@
                         <div class="col-lg-6 mb-6 mb-lg-6">
                           <div class="section-heading mb-5 d-flex align-items-center">
                             <h2>{{ post1.categoria | upper }}</h2>
-                            <div class="ml-auto"><a href="{% url 'listado_series' %}" class="view-all-btn">VER TODOS</a></div>
+                            <div class="ml-auto"><a href="{% url 'series' %}" class="view-all-btn">VER TODOS</a></div>
                           </div>
                           <div class="entry2 mb-5">
                             <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
@@ -149,7 +149,7 @@
                        <div class="col-lg-6 mb-6 mb-lg-6">
                          <div class="section-heading mb-5 d-flex align-items-center">
                            <h2>{{ post1.categoria | upper }}</h2>
-                           <div class="ml-auto"><a href="{% url 'listado_peliculas' %}" class="view-all-btn">VER TODOS</a></div>
+                           <div class="ml-auto"><a href="{% url 'peliculas' %}" class="view-all-btn">VER TODOS</a></div>
                          </div>
                          <div class="entry2 mb-5">
                            <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
