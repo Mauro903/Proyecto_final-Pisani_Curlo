@@ -49,7 +49,9 @@ class Categoria(ModeloBase):
     class Meta:
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
-
+    def __str__(self):
+        return self.nombre
+    
 class Post(ModeloBase):
     titulo = models.CharField("Titulo del Post", max_length=150, unique = True)
     slug = models.CharField("Slug", max_length=150, unique = True)
