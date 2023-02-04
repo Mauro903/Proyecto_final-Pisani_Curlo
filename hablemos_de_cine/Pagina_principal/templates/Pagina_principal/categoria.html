@@ -1,10 +1,13 @@
-{% extends 'Base.html' %}
+{% extends "pagina_principal/Blog.html" %}
 {% load static %}
 
 
 
+
 {% block contenido %}
-<h1 class="fw-bolder mb-1"></h1>
+
+
+
     <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{ categoria.imagen_referencial.url }});">
       <div class="container">
         <div class="row same-height justify-content-center">
@@ -51,6 +54,7 @@
                     <a href="?page={{ posts.next_page_number }}">{{ posts.next_page_number }}</a>
                   </li>
                   {% endif %}
+                  <a href="{% url 'blog' %}">Volver al BLOG</a>
                 </div>
               </div>
             </div>
@@ -61,5 +65,8 @@
 
         </div>
       </div>
+
     </section>
+
+
 {% endblock contenido %}
