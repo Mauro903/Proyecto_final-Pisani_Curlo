@@ -23,31 +23,8 @@
     <link rel="stylesheet" href="{% static 'hablemos_de_cine/css/style.css' %}">
 </head>
               
-                <header class="site-navbar pt-3" role="banner">
-                  <div class="container-fluid">
-                    <div class="row align-items-center">
-        <header class="site-navbar pt-3" role="banner">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-         
-                  <div class="col-6 col-xl-6 logo">
-                    <h1 class="mb-0"><a href="blog" class="text-black h2 mb-0"></a></h1>
-                  </div>         
-                <!-- Post content-->
 
 
-                <div class="col-12 d-none d-xl-block border-top">
-                    <nav class="site-navigation text-center " role="navigation">
-         
-                      <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block mb-0">
-                        <li><a href="{% url 'inicio' %}">HOME</a></li>
-                        <li><a href="{% url 'series' %}">Series</a></li>
-                        <li><a href="{% url 'peliculas' %}">Peliculas</a></li>
-                        <li><a href="{% url 'formulario_contacto' %}">Contacto</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </header>
                 <div class="slide-one-item home-slider owl-carousel">
                     <div class="site-cover site-cover-sm same-height overlay" style="background-image: url({{ principal.imagen_referencial.url }});">
                       <div class="container">
@@ -116,36 +93,36 @@
                       <div class="row">
                         <div class="col-lg-6 mb-6 mb-lg-6">
                           <div class="section-heading mb-5 d-flex align-items-center">
-                            <h2>{{ post1.categoria | upper }}</h2>
+                            <h2>{{ post_series.categoria | upper }}</h2>
                             <div class="ml-auto"><a href="{% url 'series' %}" class="view-all-btn">VER TODOS</a></div>
                           </div>
                           <div class="entry2 mb-5">
-                            <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
+                            <a href="{% url 'detalle_post' post_series.slug %}"><img src="{{ post_series.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
                             <span class="post-category text-white bg-primary mb-3"></span>
-                            <h2><a href="{% url 'detalle_post' post1.slug %}"></a>{{ post1.titulo }}</h2>
+                            <h2><a href="{% url 'detalle_post' post_series.slug %}"></a>{{ post_series.titulo }}</h2>
                             <div class="post-meta align-items-center text-left clearfix">
-                              <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post1.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
-                              <span class="d-inline-block mt-1">POR <a href="#">{{ post1.autor }}</a></span>
-                              <span>{{ post1.fecha_publicacion }}</span>
+                              <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post_series.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                              <span class="d-inline-block mt-1">POR <a href="#">{{ post_series.autor }}</a></span>
+                              <span>{{ post_series.fecha_publicacion }}</span>
                             </div>
-                            <p>{{ post1.descripcion }}</p>
+                            <p>{{ post_series.descripcion }}</p>
                           </div>
                        </div>
                        <div class="col-lg-6 mb-6 mb-lg-6">
                          <div class="section-heading mb-5 d-flex align-items-center">
-                           <h2>{{ post1.categoria | upper }}</h2>
+                           <h2>{{ post_peliculas.categoria | upper }}</h2>
                            <div class="ml-auto"><a href="{% url 'peliculas' %}" class="view-all-btn">VER TODOS</a></div>
                          </div>
                          <div class="entry2 mb-5">
-                           <a href="{% url 'detalle_post' post1.slug %}"><img src="{{ post1.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
+                           <a href="{% url 'detalle_post' post_peliculas.slug %}"><img src="{{ post_peliculas.imagen_referencial.url }}" alt="Image" class="img-fluid rounded"></a>
                            <span class="post-category text-white bg-primary mb-3"></span>
-                           <h2><a href="{% url 'detalle_post' post1.slug %}"></a>{{ post1.titulo }}</h2>
+                           <h2><a href="{% url 'detalle_post' post_peliculas.slug %}"></a>{{ post_peliculas.titulo }}</h2>
                            <div class="post-meta align-items-center text-left clearfix">
-                             <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post1.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
-                             <span class="d-inline-block mt-1">POR <a href="#">{{ post1.autor }}</a></span>
-                             <span>{{ post1.fecha_publicacion }}</span>
+                             <figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post_peliculas.autor.imagen_referencial.url }}" alt="Image" class="img-fluid"></figure>
+                             <span class="d-inline-block mt-1">POR <a href="#">{{ post_peliculas.autor }}</a></span>
+                             <span>{{ post_peliculas.fecha_publicacion }}</span>
                            </div>
-                           <p>{{ post1.descripcion }}</p>
+                           <p>{{ post_peliculas.descripcion }}</p>
                          </div>
                       </div>
                       </div>

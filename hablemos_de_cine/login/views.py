@@ -1,16 +1,17 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import UpdateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from login.forms import *
 from login.models import *
+
 
 
 # Create your views here.
@@ -75,10 +76,10 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     def get_object(self, queryset=None):
         return self.request.user
 
-
-def agregar_avatar(request):
+@login_required
+def agregaravatar(request):
     if request.method == "POST":
-        formulario = AvatarFormulario(request.POST, request.FILES) # Aquí me llega toda la info del formulario html
+        formulario = AvatarFormulario(request.POST, request.FILES)
 
         if formulario.is_valid():
             avatar = formulario.save()
@@ -90,6 +91,6 @@ def agregar_avatar(request):
         formulario = AvatarFormulario()
     return render(
         request=request,
-        template_name='Pagina_principal/formulario_avatar.html',
+        template_name='login/formulario_avatar.html',
         context={'form': formulario},
     )

@@ -2,6 +2,10 @@
 
 El proyecto se trata de una pagina que seria utilizada como blog para comentar series y peliculas.
 
+# Link del video explicativo del BLOG:
+
+https://www.loom.com/share/241ba0bc5d274cba9de3df8f19751758
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
@@ -11,7 +15,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ```
 Se necesita tener instalado:
-VSC, Python, Django, git y tener un usuario de GitHub
+VSC, Python, Django, git, tener un usuario de GitHub, ckeditor, Pillow
 ```
 
 ### Instalación 🔧
@@ -51,8 +55,7 @@ _127.0.0.1:8000/admin_🔩
 
 ```
 Espero que encuentren correcta la entrega del trabajo y tambien espero las correcciones necesarias para seguir mejorando
-(Comence a realizar ediciones en mi proyecto en la clase 22, por lo cual tal vez vena botones de esa clase, o alguna parte de codigo que aun quedo incompleta por esta razon).
-```
+
 ## Construido con 🛠️
 
 * [Startbootstrap](https://startbootstrap.com/) - El framework web usado
