@@ -5,12 +5,13 @@ from django.db.models import Q
 from django.views.generic import ListView, DetailView, View
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post, Categoria, Web, Suscriptor
+from .models import Post, Categoria, Web, Suscriptor,Contacto
 import random
 from .utils import *
-from .form import ContactoForm
+from Pagina_principal.form import ContactoForm
 from django.core.mail import send_mail
 from hablemos_de_cine.settings import EMAIL_HOST_USER
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
 
@@ -146,3 +147,6 @@ class Suscribir(View):
             pass
 
         return redirect('inicio')
+    
+
+

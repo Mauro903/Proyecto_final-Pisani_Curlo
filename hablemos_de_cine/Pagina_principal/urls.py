@@ -1,6 +1,8 @@
 from django.urls import path
 from login.views import *
-from .views import *
+from Pagina_principal.views import *
+from login.urls import agregar_avatar
+
 
 
 
@@ -18,4 +20,8 @@ urlpatterns = [
     path('formulario_contacto/', FormularioContacto.as_view(), name = 'formulario_contacto'),
     path('series/',Listado.as_view(),{'nombre_categoria':'series'}, name = 'series'),
     path('<slug:slug>/',DetallePost.as_view(), name = 'detalle_post'),
+    path('agregar-avatar/', agregar_avatar, name='agregar_avatar'),
+    path('editar-perfil/', ProfileUpdateView.as_view(), name="editar_perfil"),
+    
+    
 ] 

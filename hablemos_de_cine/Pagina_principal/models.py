@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
+
 class ModeloBase(models.Model):
     id = models.AutoField(primary_key=True)
     estado = models.BooleanField("Estado", default=True)
@@ -102,6 +103,9 @@ class Suscriptor(ModeloBase):
 
     def __str__(self):
         return self.correo
+    
+
+
 
 
 # Create your models here.

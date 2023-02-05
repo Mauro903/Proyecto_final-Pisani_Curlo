@@ -1,11 +1,13 @@
-{% extends 'Pagina_principal/Blog.html' %}
+{% extends 'Pagina_principal/Base.html' %}
+{% load static %}
 
 
 {% block contenido %}
 
 <header class="mb-4">
     <!-- Post title-->
-    <h1 class="fw-bolder mb-1">Bienvenid@ {{request.user.first_name}} al Blog de Hablemos de CINE</h1>
+    <h1 class="fw-bolder mb-1">Bienvenid@ {{ user.last_name }}, {{ user.first_name }} al Blog de Hablemos de CINE</h1>
+    <img src="{{ user.avatar.imagen.url }}" />
     <!-- Post meta content-->
     <div class="text-muted fst-italic mb-2">by Mauro</div>
     <!-- Post categories-->
@@ -16,6 +18,8 @@
         <div class="col-lg-8">
 
 <figure class="mb-4"><img class="img-fluid rounded" src="https://elpuntodelcine.com/media/zoo/images/Hablemos_de_Cine_1f72889b32a720166bc04bb258a41b06.png" alt="..." /></figure>
+
+
 
 
 {% endblock contenido %}
