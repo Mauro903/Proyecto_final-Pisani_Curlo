@@ -1,6 +1,6 @@
 # Título del Proyecto
 
-El proyecto se trata de una pagina que seria utilizada por la persona/personas que manejan los consorcios en un grupo de edificios.
+El proyecto se trata de una pagina que seria utilizada como blog para comentar series y peliculas.
 
 ## Comenzando 🚀
 
